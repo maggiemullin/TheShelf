@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap');
+
+    body, html {
+        font-family: 'Montserrat';
+        margin: 0;
+        background-color: #e6e1d8;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    header {
+        padding: 2em;
+
+        .logo{
+            color: #332722;
+            font-weight: bold;
+        }
+
+        .menu-btn {
+            width: 18px;
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    section {
+        padding: 4em;
+
+        h1 {
+            font-size: 5em;
+            margin: 1em auto;
+            width: 70%;
+
+            &::after {
+                content: ' ';
+                border-bottom: 8px solid #8d6e5b;
+                width: 60%;
+                display: block;
+            }
+        }
+    }
+
+    nav {
+        position: absolute;
+        float: right;
+        background-color: #BBB1AD;
+        padding: 2em;
+        top: 0;
+        right: 25px;
+        width: calc(30% - 4em);
+        height: calc(100vh - 4em);
+        display: none;
+        text-align: center;
+        transform: scaleX(0);
+        transform-origin: right;
+
+        .close-btn {
+            width: 18px;
+            float: right;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 20% auto 0% auto;
+            padding: 0;
+            display: grid;
+            grid-template-rows: repeat(3, 33%);
+            grid-gap: 20px;
+            width: 80%;
+
+            a {
+                color: #e6e1db;
+                font-weight: bold;
+                font-size: 3em;
+            
+
+            &::after, &::before {
+                transition: all .5s
+            }
+        }
+
+            a:hover {
+                color: #332722;
+            }
+
+
+            li {
+                opacity: 0;
+            }
+        }
+
+    }
+
+    .show-menu {
+        display: block;
+        animation: slide-menu 1s ease-in forwards;
+
+        .close-btn {
+            animation: show-x 1s 1s forwards;
+        }
+
+        li:nth-of-type(1) {
+            animation: menu-item-anim .6s forwards 1s ease-in-out;
+        }
+        li:nth-of-type(2) {
+            animation: menu-item-anim .6s forwards 1.2s ease-in-out;
+        }
+        li:nth-of-type(3) {
+            animation: menu-item-anim .6s forwards 1.4s ease-in-out;
+        }
+    }
+
+    @keyframes slide-menu {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
+
+    @keyframes show-x {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes menu-item-anim {
+        from {
+            transform: translateY(60%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .close-menu {
+        display: block;
+        animation: slide-menu-out 1s ease-in backwards;
+
+        .close-btn {
+            animation: hide-x 1s 1s forwards;
+        }
+
+        li:nth-of-type(1) {
+            animation: menu-item-anim-out .6s forwards 1s ease-out;
+        }
+        li:nth-of-type(2) {
+            animation: menu-item-anim-out .6s forwards 1.2s ease-out;
+        }
+        li:nth-of-type(3) {
+            animation: menu-item-anim-out .6s forwards 1.4s ease-out;
+        }
+
+    }
+
+    @keyframes slide-menu-out {
+        from {
+            transform: scaleX(1);
+        }
+        to {
+            transform: scaleX(0);
+        }
+    }
+
+    @keyframes hide-x {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes menu-item-anim-out {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+
+    }
+
+
+  
